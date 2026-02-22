@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "../include/LinkedList.h"
+#include "../include/Problem1.h"
 
 using namespace std;
 
@@ -33,9 +34,27 @@ void showBasicLinkedList() {
     integerList.print();
 }
 
+void problem1() {
+    LinkedList<int> li;
+    li.addFront(1);
+    li.addFront(2);
+    li.addFront(1);
+    li.addFront(3);
+    li.addFront(2);
+    li.addFront(2);
+    li.addFront(2);
+    li.addFront(5);
+    li.addFront(5);
+
+    std::cout << li << std::endl;
+    int distinct = Problem1::distinctElementsCount(li);
+    std::cout << "List has " << std::to_string(distinct) << " distinct elements!" << std::endl;
+}
+
 int main()
 {
     showBasicLinkedList();
+    problem1();
 
     return 0;
 }
