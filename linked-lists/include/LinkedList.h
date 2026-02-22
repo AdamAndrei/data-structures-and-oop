@@ -173,16 +173,58 @@ public:
             return os;
         }
         os << "size: " << std::to_string(list.size) << " | ";
-        node* current = list.head;
+        node *current = list.head;
         while (current != nullptr)
         {
             os << current->value << "~" << current->next;
-            if (current->next != nullptr) {
+            if (current->next != nullptr)
+            {
                 os << " -> ";
             }
-            current =  current->next;
+            current = current->next;
         }
         os << " -> null";
         return os;
+    }
+
+    class Iterator
+    {
+    private:
+        node *current;
+
+    public:
+        Iterator(node *v) : current(v) {};
+        Iterator &operator++()
+        {
+            current = current->next;
+            return *this;
+        }
+
+        T &operator*()
+        {
+            return current->value;
+        }
+
+        bool operator!=(const Iterator &other) const
+        {
+            return current != other.current;
+        }
+
+        Iterator next() const
+        {
+            Iterator temp = *this;
+            ++temp;
+            return temp;
+        }
+    };
+
+    Iterator begin() const
+    {
+        return Iterator(head);
+    }
+
+    Iterator end() const
+    {
+        return Iterator(nullptr);
     }
 };
