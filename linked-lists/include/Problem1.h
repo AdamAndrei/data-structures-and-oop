@@ -9,7 +9,6 @@ public:
     {
         int count = 0;
         for (auto it = origList.begin(); it != origList.end(); ++it) {
-            T& currentVal = *it;
             bool found = false;
             for (auto itC = it.next(); itC != origList.end(); ++itC) {
                 if (*it == *itC) {

@@ -187,6 +187,34 @@ public:
         return os;
     }
 
+    int distinctElementsCount() const
+    {
+        node *current = this->head;
+        int count = 0;
+        while (current != nullptr)
+        {
+            bool found = false;
+            node *checker = current->next;
+            while (checker != nullptr)
+            {
+                if (checker->value == current->value)
+                {
+                    found = true;
+                    break;
+                }
+                checker = checker->next;
+            }
+            if (!found)
+            {
+                count++;
+            }
+
+            current = current->next;
+        }
+
+        return count;
+    }
+
     class Iterator
     {
     private:
