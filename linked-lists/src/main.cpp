@@ -48,7 +48,7 @@ void problem1() {
 
     std::cout << li << std::endl;
     int distinct = Problem1::distinctElementsCount(li);
-    std::cout << "List has " << std::to_string(distinct) << " distinct elements!" << std::endl;
+    std::cout << "List has " << std::to_string(distinct) << " distinct elements using iterator and " << std::to_string(li.distinctElementsCount()) <<  " by the inner method!" << std::endl;
 }
 
 int main()
