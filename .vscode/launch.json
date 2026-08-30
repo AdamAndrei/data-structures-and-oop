@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/${input:project}/output",
+      "preLaunchTask": "build",
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "project",
+      "type": "pickString",
+      "description": "Select project to debug",
+      "options": ["linked-lists", "stacks", "queues"]
+    }
+  ]
+}

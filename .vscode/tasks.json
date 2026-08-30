@@ -21,7 +21,7 @@
       "id": "project",
       "type": "pickString",
       "description": "Select project to build",
-      "options": ["linked-lists", "stacks", "queues"]
+      "options": ["linked-lists", "geometric_vectors"]
     }
   ]
 }

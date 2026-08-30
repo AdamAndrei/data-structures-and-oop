@@ -42,3 +42,5 @@
 
 # output files
 **/output
+
+**/build
